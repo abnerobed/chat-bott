@@ -1,0 +1,52 @@
+:root{--bg:#07061a;--p:#7a4dff;--b:#3d7bff;--t:#eef0ff;--m:#9aa0c8;--gl:rgba(24,20,60,.55);--ln:rgba(122,77,255,.45)}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}body{background:radial-gradient(120% 80% at 50% 0,#1a1050,#07061a 60%);color:var(--t);font:16px/1.5 "Segoe UI",system-ui,sans-serif;display:flex;justify-content:center}
+#particles{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#app{position:relative;z-index:1;width:100%;max-width:520px;height:100dvh;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+.screen{position:absolute;inset:0;display:none;flex-direction:column;padding:18px;overflow:auto}
+.screen.active{display:flex;animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(10px)}}
+#s-welcome{align-items:center;justify-content:center;text-align:center;gap:10px}
+.halo{position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(122,77,255,.55),transparent 65%);filter:blur(20px);top:18%}
+.robot{width:230px;position:relative;filter:drop-shadow(0 0 24px rgba(122,77,255,.7));animation:float 4s ease-in-out infinite}
+.ring{fill:none;stroke:var(--b);stroke-width:1.5;stroke-dasharray:40 14;transform-origin:center;animation:spin 14s linear infinite}.r2{stroke:var(--p);animation-direction:reverse}
+.eye{animation:blink 5s infinite}
+@keyframes float{50%{transform:translateY(-10px)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes blink{94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+h1{font-size:2rem;letter-spacing:.12em;position:relative}.sub{color:var(--m);position:relative}
+h2{font-size:1rem;margin:18px 0 8px;display:flex;justify-content:space-between}
+.btn{background:var(--gl);color:var(--t);border:1px solid var(--ln);border-radius:999px;padding:10px 20px;font:inherit;cursor:pointer;transition:.2s}
+.btn:hover{box-shadow:0 0 18px var(--p)}.btn.primary{background:linear-gradient(90deg,var(--p),var(--b));border:0;padding:12px 38px;position:relative}
+:focus-visible{outline:2px solid #9fd0ff;outline-offset:2px}
+.status{font-size:.85rem;color:var(--m);position:relative}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#3dffb0;box-shadow:0 0 8px #3dffb0;margin-right:4px}
+.top{display:flex;align-items:center;gap:12px;margin-bottom:10px}.top>div{flex:1}.top small{display:block;color:var(--m)}.top b{flex:1}
+.mini{width:42px}.icon{background:var(--gl);border:1px solid var(--ln);color:var(--t);border-radius:50%;width:38px;height:38px;font-size:1.1rem;cursor:pointer}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:var(--gl);backdrop-filter:blur(12px);border:1px solid var(--ln);border-radius:22px;padding:22px 10px;color:var(--t);font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;transition:.25s}
+.card:hover{transform:translateY(-3px);box-shadow:0 0 24px rgba(122,77,255,.5)}.ico{font-size:1.8rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips button{background:var(--gl);border:1px solid var(--ln);color:var(--t);border-radius:14px;padding:8px 12px;font:inherit;cursor:pointer}
+.link{background:none;border:0;color:#9fd0ff;cursor:pointer;font:inherit}
+.history{list-style:none;display:grid;gap:8px}.history li{display:flex;gap:6px}.history button{flex:1;text-align:left;background:var(--gl);border:1px solid var(--ln);border-radius:14px;padding:10px 12px;color:var(--t);font:inherit;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.history .del{flex:0 0 40px;text-align:center}
+.banner{background:rgba(255,190,60,.12);border:1px solid rgba(255,190,60,.5);border-radius:12px;padding:8px 12px;font-size:.85rem;margin-bottom:8px}
+#messages{flex:1;overflow:auto;display:flex;flex-direction:column;gap:12px;padding:4px 0}
+.msg{max-width:88%;padding:10px 14px;border-radius:18px;word-wrap:break-word}
+.msg.user{align-self:flex-end;background:linear-gradient(90deg,var(--p),var(--b))}
+.msg.assistant{align-self:flex-start;background:var(--gl);border:1px solid var(--ln)}
+.msg pre{background:#000a;padding:8px;border-radius:8px;overflow:auto}.msg p+p{margin-top:8px}
+.msg .act{display:flex;gap:8px;margin-top:6px}.msg .act button{background:none;border:0;color:#9fd0ff;cursor:pointer;font-size:.8rem}
+.empty{text-align:center;color:var(--m);margin:auto}.typing i{display:inline-block;width:7px;height:7px;margin:0 2px;border-radius:50%;background:var(--m);animation:bounce 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bounce{40%{transform:translateY(-6px)}}
+#composer{display:flex;gap:8px;align-items:flex-end;padding-top:8px}
+textarea,input{flex:1;background:var(--gl);border:1px solid var(--ln);border-radius:18px;color:var(--t);font:inherit;padding:10px 14px;resize:none;max-height:140px}
+.send{padding:12px 18px!important}
+#s-voice{align-items:center;text-align:center}
+.orb{width:200px;height:200px;margin:30px 0 10px;background:radial-gradient(circle at 35% 30%,#9fd0ff,#7a4dff 55%,#1a0f60);animation:morph 6s ease-in-out infinite;filter:drop-shadow(0 0 30px #7a4dff)}
+.listening .orb{animation-duration:1.6s}
+@keyframes morph{0%,100%{border-radius:50% 50% 45% 55%/55% 45% 55% 45%}50%{border-radius:42% 58% 55% 45%/48% 55% 45% 52%}}
+.wave{display:flex;gap:5px;height:50px;align-items:center}.wave i{width:5px;height:12px;border-radius:3px;background:var(--b);animation:w 1s ease-in-out infinite}.wave i:nth-child(odd){background:var(--p);animation-delay:.2s}
+.vtext{min-height:1.5em;max-width:90%}.vtext.ai{color:#9fd0ff}.tiny{font-size:.78rem;color:var(--m)}
+.mic{margin-top:auto;width:68px;height:68px;border-radius:50%;border:1px solid var(--ln);background:var(--gl);font-size:1.6rem;cursor:pointer;color:var(--t)}.listening .mic{box-shadow:0 0 30px #3d7bff}
+dialog{margin:auto;background:#120d3a;color:var(--t);border:1px solid var(--ln);border-radius:20px;padding:20px;width:min(92vw,380px)}dialog::backdrop{background:#000a}
+dialog form{display:grid;gap:10px}.row{display:flex;gap:6px;flex-wrap:wrap}
+@media(min-width:900px){#app{max-width:760px}.cards{gap:18px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

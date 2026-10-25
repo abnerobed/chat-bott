@@ -1,0 +1,11 @@
+{
+  "name": "personal-ai",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
